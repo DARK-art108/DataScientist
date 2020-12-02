@@ -6,6 +6,13 @@ from sklearn.metrics import accuracy_score
 import numpy as np
 
 def _voting_classifier(train,test,estimators, *,x_predict=None, voting='hard',metrics=None, weights=None, n_jobs=None, flatten_transform=True, verbose=False):
+    
+    """
+    For more info visit : 
+    
+    https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.VotingClassifier.html
+    
+    """
 
     model = VotingClassifier(estimators,  voting ='hard')
     model.fit(train[0], train[1])
